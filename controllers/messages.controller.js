@@ -2,11 +2,10 @@ const path = require('path')
 
 function getMessages(req, res) {
     res.render('messages', {
-            title: 'Messages to My Friends!',
-            friend: 'Elon Musk',
-        })
-        // res.sendFile(path.join(__dirname, '..', 'public', 'images', 'skimountain.jpg'))
-
+        title: 'Messages to My Friends!',
+        friend: 'Ken',
+    })
+    // res.sendFile(path.join(__dirname, '..', 'public', 'images', 'skimountain.jpg'))
 }
 
 function postMessage(req, res) {
@@ -15,5 +14,5 @@ function postMessage(req, res) {
 
 module.exports = {
     getMessages,
-    postMessage
+    postMessage,
 }

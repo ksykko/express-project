@@ -11,7 +11,6 @@ app.set('views', path.join(__dirname, 'views'))
 
 const PORT = 3000
 
-
 //* MIDDLEWARE
 app.use((req, res, next) => {
     const start = Date.now()
@@ -21,28 +20,22 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`)
 })
 
-
 //* STATIC FILES
 app.use('/site', express.static(path.join(__dirname, 'public')))
-
 
 //* JSON PARSING MIDDLEWARE
 app.use(express.json())
 
-
 //* ROUTES
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'My Friends are Very Clever',
-        caption: 'Let\'s go skiing!',
+        title: 'Hello, World!',
+        caption: 'This is a sample picture',
     })
 })
 app.use('/friends', friendsRouter)
 app.use('/messages', messagesRouter)
 
-
-
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}... `)
-
 })
